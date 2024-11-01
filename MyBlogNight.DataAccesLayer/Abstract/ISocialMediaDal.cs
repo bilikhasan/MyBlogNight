@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyBlogNight.DataAccesLayer.Abstract
 {
-    public interface ISocialMediaDal: IGenericDal<SocialMedia>
+    public interface ISocialMediaDal : IGenericDal<SocialMedia>     //IGenericDal'dan SocialMedia sınıf için miras alıyoruz
     {
 
     }

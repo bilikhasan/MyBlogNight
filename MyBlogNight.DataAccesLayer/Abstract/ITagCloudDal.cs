@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyBlogNight.DataAccesLayer.Abstract
 {
-    public interface ITagCloudDal : IGenericDal<TagCloud>
+    public interface ITagCloudDal :IGenericDal<TagCloud>        //IGenericDal'dan TagCloud sınıfı için miras aldık.
     {
 
     }

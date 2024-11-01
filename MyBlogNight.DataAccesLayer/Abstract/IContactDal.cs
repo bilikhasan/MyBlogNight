@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyBlogNight.DataAccesLayer.Abstract
 {
-    public interface IContactDal:IGenericDal<Contact>
+    public interface IContactDal :IGenericDal<Contact>      //IGenericDal'dan Contact sınıfı için miras alıyoruz
     {
     }
 }

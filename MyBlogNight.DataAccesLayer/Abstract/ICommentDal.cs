@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyBlogNight.DataAccesLayer.Abstract
 {
-    internal interface ICommentDal :IGenericDal<Comment>
+    public interface ICommentDal :IGenericDal<Comment>      //IGenericDal'dan Comment sınıfı için miras alıyoruz
     {
     }
 }

@@ -7,8 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MyBlogNight.DataAccesLayer.Repositories
-{
-    public class GenericRepositories<T> : IGenericDal<T> where T : class
+{                                                                                    //IGenericDal çift tıkla. Implement interface DE.
+    public class GenericRepositories<T> : IGenericDal<T> where T : class       
     {
         private readonly BlogContext _context;
         public void Delete(int id)

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace MyBlogNight.DataAccesLayer.Abstract
 {
     public interface IGenericDal<T> where T : class
-    {
+    {                                                           //Hepsi elle yazıldı.
         void Insert(T entity);
         void Update(T entity);
         void Delete(int id);

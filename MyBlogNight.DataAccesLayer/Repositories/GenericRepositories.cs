@@ -7,10 +7,16 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MyBlogNight.DataAccesLayer.Repositories
-{                                                                                    //IGenericDal çift tıkla. Implement interface DE.
-    public class GenericRepositories<T> : IGenericDal<T> where T : class       
+{                                                                      //IGenericDal çift tıkla. Implement interface DE. Otomatik gelsin
+    public class GenericRepositories<T> : IGenericDal<T> where T : class
     {
         private readonly BlogContext _context;
+
+        public GenericRepositories(BlogContext context)
+        {
+            _context = context;
+        }
+
         public void Delete(int id)
         {
             var value = _context.Set<T>().Find(id);

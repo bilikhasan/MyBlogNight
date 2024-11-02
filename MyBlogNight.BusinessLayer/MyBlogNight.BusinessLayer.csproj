@@ -15,4 +15,8 @@
     <Folder Include="ValidatioRules\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MyBlogNight.DataAccesLayer\MyBlogNight.DataAccesLayer.csproj" />
+  </ItemGroup>
+
 </Project>

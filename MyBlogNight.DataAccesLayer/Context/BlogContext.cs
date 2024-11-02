@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using MyBlogNight.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -8,8 +9,13 @@ using System.Threading.Tasks;
 
 namespace MyBlogNight.DataAccesLayer.Context
 {
-    public  class BlogContext:DbContext
+    public class BlogContext : IdentityDbContext<AppUser,AppRole,int>
     {
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS; initial catalog=BlogFoodyDb; integrated security=true;");
+        }
+
         public DbSet<Article> Articles { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Comment> Comments { get; set; }

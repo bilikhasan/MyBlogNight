@@ -1,4 +1,8 @@
+using MyBlogNight.BusinessLayer.Abstract;
+using MyBlogNight.BusinessLayer.Concrete;
+using MyBlogNight.DataAccesLayer.Abstract;
 using MyBlogNight.DataAccesLayer.Context;
+using MyBlogNight.DataAccesLayer.EntityFramework;
 using MyBlogNight.EntityLayer.Concrete;
 using MyBlogNight.PresentationLayer.Models;
 
@@ -9,8 +13,18 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 
+
 builder.Services.AddDbContext<BlogContext>();
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<BlogContext>().AddErrorDescriber<CustomIdentityErrorValidator>();
+
+
+builder.Services.AddScoped<IArticleDal, EfArticleDal>();
+builder.Services.AddScoped<IArticleService, ArticleManager>();
+
+builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
+builder.Services.AddScoped<ICategoryService, CategoryManager>();
+
+
 
 
 
@@ -34,6 +48,10 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+
+app.UseAuthentication();                /*Sonradan eklendi.*/
+
 
 app.UseAuthorization();
 

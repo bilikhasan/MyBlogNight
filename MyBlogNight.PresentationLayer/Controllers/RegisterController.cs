@@ -41,7 +41,7 @@ namespace MyBlogNight.PresentationLayer.Controllers
             {
                 foreach(var item in result.Errors)
                 {
-                    ModelState.AddModelError("", item.Description);             //Niye Register yapımıyoruz,bunun sebebini söyler.
+                    ModelState.AddModelError("", item.Description);             //Niye Register yapamıyoruz,bunun sebebini söyler.
                 }
             }
             return View();

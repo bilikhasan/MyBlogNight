@@ -6,8 +6,8 @@ using MyBlogNight.PresentationLayer.Models;
 namespace MyBlogNight.PresentationLayer.Controllers
 {
     public class LoginController : Controller
-    {
-        private readonly SignInManager<AppUser> _signInManager;
+    {                                                                   //LoginController da signinManager sınıfını kullan 
+        private readonly SignInManager<AppUser> _signInManager;         //RegisterController da UserManager sınfını kullan
 
         public LoginController(SignInManager<AppUser> signInManager)
         {

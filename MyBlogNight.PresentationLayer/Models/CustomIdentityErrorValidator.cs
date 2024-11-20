@@ -56,5 +56,7 @@ namespace MyBlogNight.PresentationLayer.Models
                 Description = "Lütfen en az 6 karakter girişi yapınız"
             };
         }
+
+
     }
 }

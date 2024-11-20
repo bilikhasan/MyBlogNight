@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MyBlogNight.BusinessLayer.Abstract;
+using MyBlogNight.EntityLayer.Concrete;
 
 namespace MyBlogNight.PresentationLayer.Controllers
 {
@@ -18,5 +19,17 @@ namespace MyBlogNight.PresentationLayer.Controllers
             return View(values);
         }
 
+        [HttpGet]
+        public IActionResult CreateCategory ()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreateCategory (Category category)
+        {
+            _categoryService.TInsert(category);
+            return RedirectToAction("CategoryList");
+        }
     }
 }

@@ -17,7 +17,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<BlogContext>();
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<BlogContext>().AddErrorDescriber<CustomIdentityErrorValidator>();
 
-
 builder.Services.AddScoped<IArticleDal, EfArticleDal>();
 builder.Services.AddScoped<IArticleService, ArticleManager>();
 
@@ -50,7 +49,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 
-app.UseAuthentication();                /*Sonradan eklendi.*/
+app.UseAuthentication();     /*Sonradan eklendi.*/    //Önce login olmalý 
 
 
 app.UseAuthorization();

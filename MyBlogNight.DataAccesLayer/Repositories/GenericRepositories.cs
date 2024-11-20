@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MyBlogNight.DataAccesLayer.Repositories
-{                                                                      //IGenericDal çift tıkla. Implement interface DE. Otomatik gelsin
+{                                                    //IGenericDal çift tıkla. Implement interface DE. Otomatik gelsin
     public class GenericRepositories<T> : IGenericDal<T> where T : class
     {
         private readonly BlogContext _context;

@@ -23,6 +23,11 @@ namespace MyBlogNight.BusinessLayer.Concrete
             _categoryDal.Delete(id);
         }
 
+        public List<Category> TGetAll()
+        {
+            return _categoryDal.GetAll();
+        }
+
         public Category TGetById(int id)
         {
             return _categoryDal.GetById(id);
@@ -30,19 +35,14 @@ namespace MyBlogNight.BusinessLayer.Concrete
 
         public void TInsert(Category entity)
         {
-            if(entity.CategoryName.Length>=5 && entity.CategoryName.Length<=50)
+            if(entity.CategoryName.Length>= 5 && entity.CategoryName.Length<=50)
             {
                 _categoryDal.Insert(entity);
             }
             else
             {
-                //hata mesaji
+                //hata mesajı
             }
-        }
-
-        public List<Category> TtGetAll()
-        {
-            return _categoryDal.GetAll();
         }
 
         public void TUpdate(Category entity)

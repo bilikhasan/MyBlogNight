@@ -12,24 +12,30 @@ namespace MyBlogNight.BusinessLayer.Concrete
     public class ArticleManager : IArticleService
     {
         private readonly IArticleDal _articleDal;
+
+        public ArticleManager(IArticleDal articleDal)
+        {
+            _articleDal = articleDal;
+        }
+
         public void TDelete(int id)
         {
             _articleDal.Delete(id);
         }
 
+        public List<Article> TGetAll()
+        {
+           return _articleDal.GetAll();
+        }
+
         public Article TGetById(int id)
         {
-           return _articleDal.GetById(id);
+            return _articleDal.GetById(id);
         }
 
         public void TInsert(Article entity)
         {
             _articleDal.Insert(entity);
-        }
-
-        public List<Article> TtGetAll()
-        {
-            return _articleDal.GetAll();
         }
 
         public void TUpdate(Article entity)

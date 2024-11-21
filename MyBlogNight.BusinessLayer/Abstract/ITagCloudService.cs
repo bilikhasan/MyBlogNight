@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyBlogNight.BusinessLayer.Abstract
 {
-    public interface ITagCloud :IGenericService<TagCloud>
+    public interface ITagCloudService :IGenericService<TagCloud>
     {
     }
 }

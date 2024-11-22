@@ -9,6 +9,6 @@ namespace MyBlogNight.DataAccesLayer.Abstract
 {
     public interface IArticleDal :IGenericDal<Article>
     {
-
+        List<Article> ArticleListWithCategory();
     }
 }

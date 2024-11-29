@@ -9,5 +9,6 @@ namespace MyBlogNight.DataAccesLayer.Abstract
 {
     public interface ICommentDal :IGenericDal<Comment>      //IGenericDal'dan Comment sınıfı için miras alıyoruz
     {
+        List<Comment> GetCommentsByArticleId(int id);
     }
 }

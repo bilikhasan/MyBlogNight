@@ -45,5 +45,12 @@ namespace MyBlogNight.DataAccesLayer.EntityFramework
             updatedValue.ArticleViewCount += 1;
             context.SaveChanges();
         }
+
+        public List<Article> GetArticlesByAppUserId(int id)
+        {
+            var context = new BlogContext();
+            var values = context.Articles.Where(x => x.AppUserId == id).ToList();
+            return values;
+        }
     }
 }
